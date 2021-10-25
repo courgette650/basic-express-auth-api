@@ -17,7 +17,14 @@ then init dotenv file
 ```sh
 $ npm run init
 # you can specify port by adding parameter
-# ex : npm run init 40001
+# ex : npm run init 4001
+```
+
+it should create a .env :
+```dotenv
+TOKEN_KEY=SECRET_KEY_VARIABLE
+PORT=PORT 
+# 4001 by default
 ```
 
 ## Starting developpment
