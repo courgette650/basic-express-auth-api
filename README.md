@@ -49,14 +49,14 @@ $ npm start
 
 - Register
 ```sh
-"http://localhost:PORT/register"
+API_PATH/register
 # Body
 # IN -> email : the email for the user
 # IN -> password : lengt between 7 and 40
 ```
 - Login
 ```sh
-"http://localhost:PORT/login"
+API_PATH/login
 # Body
 # IN -> email 
 # IN -> password
@@ -64,13 +64,13 @@ $ npm start
 ```
 - Logout
 ```sh
-"http://localhost:PORT/logout"
+API_PATH/logout
 # Header
 # IN -> x-access-token : the jwt token
 ```
 - Welcome
 ```sh
-"http://localhost:PORT/welcome"
+API_PATH/welcome
 # Header
 # IN -> x-access-token : the jwt token
 ```
