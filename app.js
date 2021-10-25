@@ -33,15 +33,15 @@ app.post("/register", async (req, res) => {
     });
 
     delete user[0]["password"];
-    const token = jwt.sign(
-      { user_id: user[0]._id, email },
-      process.env.TOKEN_KEY,
-      {
-        expiresIn: "2h",
-      }
-    );
+    // const token = jwt.sign(
+    //   { user_id: user[0]._id, email },
+    //   process.env.TOKEN_KEY,
+    //   {
+    //     expiresIn: "2h",
+    //   }
+    // );
 
-    user[0].token = token;
+    // user[0].token = token;
     res.status(201).json(user[0]);
   } catch (err) {
     console.error(err);
@@ -61,7 +61,7 @@ app.post("/login", async (req, res) => {
         { user_id: user._id, email },
         process.env.TOKEN_KEY,
         {
-          expiresIn: "1s",
+          expiresIn: "2h",
         }
       );
 
