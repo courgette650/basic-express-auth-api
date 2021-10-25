@@ -3,9 +3,9 @@ const loggd = require("loggd");
 const createUser = (db) => {
   return async (user) => {
     let u = await db.find({ email: user.email });
-    console.log(u.result[0])
     if (u.result[0] !== undefined) throw "User already exist";
-    return db.insert({
+
+    return await db.insert({
       ...user,
     });
   };
@@ -40,7 +40,7 @@ const getUserByEmail = (db) => {
 };
 
 const initDatabase = async () => {
-  const db = new loggd("users.json");
+  const db = new loggd("./db/users.json");
 
   return {
     createUser: createUser(db),
