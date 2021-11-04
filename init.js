@@ -10,4 +10,5 @@ const TOKEN_KEY = crypto.randomBytes(32).toString("hex");
 
 console.log(`TOKEN_KEY=${TOKEN_KEY}`);
 console.log(`PORT=${PORT}`);
-fs.writeFileSync(sourcePath, `TOKEN_KEY=${TOKEN_KEY}\nPORT=${PORT}`);
+console.log(`MONGO_URI=<url to atlas mongodb>`);
+fs.writeFileSync(sourcePath, `TOKEN_KEY=${TOKEN_KEY}\nPORT=${PORT}\nMONGO_URI=<url_to_atlas_mongo_db>`);

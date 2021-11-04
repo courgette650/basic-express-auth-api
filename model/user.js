@@ -1,9 +1,13 @@
-class User {
-    constructor(email, password, firstname, name, birthdate) {
-        this.email = email;
-        this.password = password
-        this.firstname = firstname;
-        this.name = name;
-        this.birthdate = birthdate;
-    }
-}
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+
+const userSchema = new Schema({
+  email: String,
+  name: String,
+  firstname: String,
+  password: String,
+});
+
+const User = mongoose.model("User", userSchema);
+
+module.exports = User;
